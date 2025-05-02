@@ -1,10 +1,9 @@
 class toDoItem {
 
-    constructor(taskTitle, description, dueDate, dueTime, priority, notes='', completed=false){
+    constructor(taskTitle, description, dueDate, priority, notes='', completed=false){
         this.taskTitle = taskTitle; 
         this.description = description; 
         this.dueDate = dueDate;
-        this.dueTime = dueTime; 
         this.priority = priority; 
         this.notes = notes; 
         this.completed = completed; 
@@ -14,12 +13,16 @@ class toDoItem {
         this.completed = true; 
     }
 
-    updateToDoItem(newDescription){
+    updateToDoItemDescription(newDescription){
         this.description = newDescription; 
     }
 
     setPriorityToDoItem(newPriority){
         this.priority = newPriority;
+    }
+
+    changeToDoItemDueDate(newDueDate){
+        this.dueDate = newDueDate; 
     }
 
 }
