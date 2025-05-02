@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+}
+
+#h2-container-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#to-do-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+}
+
+#project-name-div {
+    text-align: center;
+}
+
+#container-div-submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
