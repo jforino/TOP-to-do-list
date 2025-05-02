@@ -1,6 +1,6 @@
 class toDoItem {
 
-    constructor(taskTitle, description, dueDate, priority, notes='', completed=false){
+    constructor(taskTitle, description, dueDate, priority=0, notes='', completed=false){
         this.taskTitle = taskTitle; 
         this.description = description; 
         this.dueDate = dueDate;
