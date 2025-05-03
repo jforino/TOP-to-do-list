@@ -10,6 +10,12 @@ function addItemToDOMList(element){
     task.className = 'to-do-list-li'
     task.textContent = element.taskTitle; 
     toDoListUL.append(task);
+
+    const checkBox = document.createElement('input');
+    checkBox.className = 'li-check-box'
+    checkBox.type = 'checkbox';
+
+    task.appendChild(checkBox); 
 }
 
 function setProjectName(currentProject){

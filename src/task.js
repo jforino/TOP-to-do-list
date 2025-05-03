@@ -10,6 +10,14 @@ class toDoItem {
     }
 
     completeToDoItem(){
+        const toDoCheckbox = document.getElementsByClassName('li-check-box');
+
+        toDoCheckbox.forEach(checkbox => {
+            document.addEventListener('click', () => {
+                checkbox.classList.add('to-do-list-li-checked');
+            })
+        });
+
         this.completed = true; 
     }
 

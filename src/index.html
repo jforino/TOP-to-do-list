@@ -17,19 +17,26 @@
     </div>
         <ul id="to-do-list-ul"></ul>
 
-        <div id="container-div-submit-button">
+        <div id="to-do-list-user-input-container">
             <div id="task-title-container-div">
                 <label for="taskTitle">Task Title:</label>
-                <input type="text" id="input-field-taskTitle" name="taskTitle" size="100vw"/>
+                <input type="text" id="input-field-taskTitle" name="taskTitle" size="50vw"/>
             </div>
-            <label for="taskDescription">Task Description: </label>
-            <input type="text" id="input-field-task-description" name="taskDescription">
-            <label for="due-date">Due Date: </label>
-            <input type="date" name="due-date" id="input-due-date">
-            
+            <div id="due-date-and-time-container">
+                <label for="due-date">Due Date: </label>
+                <input type="date" name="due-date" id="input-due-date">
+
+                <label for="due-time">Due Time: </label>
+                <input type="time" name="due-time" id="input-due-time">
+            </div>    
+
             <button id="submit-button" type="submit" name>Add Task</button>
         </div>
-    
+
+        <div id="task-description-container">
+            <label for="taskDescription">Task Description: </label>
+            <input type="text" id="input-field-task-description" name="taskDescription">
+        </div>
 </div>
 
 </body>

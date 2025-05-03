@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+html{
+    background-color: rgb(199, 246, 215);
+}
+
 body {
     display: flex;
     justify-content: center;  
-    align-items: center;      
+    align-items: center;
+    font-family: 'Alegreya', serif;  
 }
 
 #h2-container-div {
@@ -20,8 +27,39 @@ body {
     text-align: center;
 }
 
-#container-div-submit-button {
+#to-do-list-user-input-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#due-date-and-time-container{
+    display: flex;
+    gap: 5px;
+}
+
+.to-do-list-li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.to-do-list-li-checked {
+    text-decoration: line-through;
+}
+
+#task-description-container {
+    margin-top: 20px;
+}
+
+#input-field-task-description {
+    width: 50vw;
+    padding: .5em;
+    font-size: 1em;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
 }
