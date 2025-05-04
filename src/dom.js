@@ -15,6 +15,14 @@ function addItemToDOMList(element){
     checkBox.className = 'li-check-box'
     checkBox.type = 'checkbox';
 
+    checkBox.addEventListener('change', () => {
+        task.classList.toggle('to-do-list-li-checked', checkBox.checked); 
+        console.log('clicked'); 
+        
+        element.completed = checkBox.checked; 
+        console.log(element.completed); 
+    })
+
     task.appendChild(checkBox); 
 }
 
@@ -28,7 +36,7 @@ export function renderDOM(currentProject){
     setProjectName(currentProject);
      
     currentProject.projectToDoList.forEach(element => {
-        addItemToDOMList(element); 
+        addItemToDOMList(element);  
     });
 
 }
