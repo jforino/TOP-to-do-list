@@ -49,11 +49,18 @@ function createToDoItemFromUserInput(){
 export function renderDOM(currentProject){
    
     setProjectName(currentProject);
-     
-    currentProject.projectToDoList.forEach(element => {
-        addItemToDOMList(element);  
-    });
+    
+    const localStorageItems = localStorage.getItem('projects');
 
+    if (localStorageItems){
+        const parsedLocalStorage = JSON.parse(localStorageItems); 
+
+        parsedLocalStorage[0].tasks.forEach(task => {
+            addItemToDOMList(task); 
+        })
+    }
+
+  
 
     // listen for user input and create task
     form.addEventListener('submit', (e) => {
@@ -62,6 +69,8 @@ export function renderDOM(currentProject){
         
         addItemToDOMList(userCreatedTask);         
         currentProject.projectToDoList.push(userCreatedTask); 
+
+        currentProject.updateProjectTasks(currentProject); 
 
         console.log('form submitted');
         
