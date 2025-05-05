@@ -51,16 +51,16 @@ export function renderDOM(currentProject){
     setProjectName(currentProject);
     
     const localStorageItems = localStorage.getItem('projects');
+    const parsedLocalStorageItems = JSON.parse(localStorageItems);
 
-    if (localStorageItems){
-        const parsedLocalStorage = JSON.parse(localStorageItems); 
 
-        parsedLocalStorage[0].tasks.forEach(task => {
-            addItemToDOMList(task); 
-        })
-    }
+    // console.log(parsedLocalStorageItems.projectToDoList);
 
-  
+    parsedLocalStorageItems.projectToDoList.forEach (todoitem => {
+        addItemToDOMList(todoitem); 
+    })
+
+    
 
     // listen for user input and create task
     form.addEventListener('submit', (e) => {
@@ -71,10 +71,11 @@ export function renderDOM(currentProject){
         currentProject.projectToDoList.push(userCreatedTask); 
 
         currentProject.updateProjectTasks(currentProject); 
-
-        console.log('form submitted');
         
         form.reset();
     })
+
+
+    
 
 }

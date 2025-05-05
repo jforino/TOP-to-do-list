@@ -17,10 +17,11 @@ const taskThree = new toDoItem('throw the trash', 'walk the dog', '2', 'low');
 const thingsToDo = [taskOne, taskTwo, taskThree];
 
 const newProject = new Project('House Remodel', thingsToDo);
-
-const JSONItemList = localStorage.getItem('projects'); 
+const JSONItemList = JSON.stringify(newProject); 
 
 const parsedJSON = JSON.parse(JSONItemList);
+
+localStorage.setItem('projects', JSONItemList); 
 
 console.log(parsedJSON[0]);
 

@@ -1,3 +1,5 @@
+import { parse } from "date-fns";
+
 class Project {
     constructor(projectName, projectToDoList=[]){
         this.projectName = projectName; 
@@ -32,17 +34,18 @@ class Project {
     }
 
     updateProjectTasks(currentProject){
+        // create func that updates the projectToDoList array when a user submits a new task 
+        
         const projectListJSON = localStorage.getItem('projects');
-
         const parsedJSON = JSON.parse(projectListJSON); 
 
-        parsedJSON.forEach(element => {
-            console.log(element);
-            console.log(`update project tasks`)
-            if (element.projectName == currentProject.projectName){
-                element.tasks.push();
-            }        
-        });
+        console.log(parsedJSON.projectToDoList);
+
+        console.log(currentProject.projectToDoList); 
+        parsedJSON.projectToDoList = JSON.stringify(currentProject.projectToDoList);
+
+        localStorage.setItem('projects',  parsedJSON.projectToDoList)
+
     }
 
 }
