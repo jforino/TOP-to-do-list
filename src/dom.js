@@ -54,9 +54,9 @@ export function renderDOM(currentProject){
     const parsedLocalStorageItems = JSON.parse(localStorageItems);
 
 
-    // console.log(parsedLocalStorageItems.projectToDoList);
+    console.log(parsedLocalStorageItems.projectToDoList);
 
-    parsedLocalStorageItems.projectToDoList.forEach (todoitem => {
+    parsedLocalStorageItems.forEach (todoitem => {
         addItemToDOMList(todoitem); 
     })
 

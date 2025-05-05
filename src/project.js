@@ -39,12 +39,14 @@ class Project {
         const projectListJSON = localStorage.getItem('projects');
         const parsedJSON = JSON.parse(projectListJSON); 
 
-        console.log(parsedJSON.projectToDoList);
+        
+        console.log(`project to do list log-->`)
+        console.log(parsedJSON);
 
-        console.log(currentProject.projectToDoList); 
-        parsedJSON.projectToDoList = JSON.stringify(currentProject.projectToDoList);
+        const updatedProjectList = JSON.stringify(currentProject.projectToDoList);
+        console.log(currentProject.projectToDoList);
 
-        localStorage.setItem('projects',  parsedJSON.projectToDoList)
+        localStorage.setItem('projects',  updatedProjectList); 
 
     }
 
