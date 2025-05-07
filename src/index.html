@@ -1,48 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-</head>
-<body>
-
-<div id="to-do-list-container">
-    <div id="h1-container">
+  </head>
+  <body>
+    <div id="to-do-list-container">
+      <div id="h1-container">
         <h1 id="project-name-div"></h1>
-    </div>
-    <div id="h2-container-div">
+      </div>
+      <div id="h2-container-div">
         <h2 id="to-do-heading1">To Do:</h2>
         <h2 id="completed-heading">Completed?</h2>
-    </div>
-        <ul id="to-do-list-ul"></ul>
+      </div>
+      <ul id="to-do-list-ul"></ul>
 
-    <form id="user-task-input-form">
-
+      <form id="user-task-input-form">
         <div id="to-do-list-user-input-container">
-            <div id="task-title-container-div">
-                <label for="taskTitle">Task Title:</label>
-                <input type="text" id="input-field-taskTitle" name="taskTitle" size="50vw" required/>
-            </div>
-            <div id="due-date-and-time-container">
-                <label for="due-date">Due Date: </label>
-                <input type="date" name="due-date" id="input-due-date">
+          <div id="task-title-container-div">
+            <label for="taskTitle">Task Title:</label>
+            <input
+              type="text"
+              id="input-field-taskTitle"
+              name="taskTitle"
+              size="50vw"
+              required
+            />
+          </div>
+          <div id="due-date-and-time-container">
+            <label for="due-date">Due Date: </label>
+            <input type="date" name="due-date" id="input-due-date" />
 
-                <label for="due-time">Due Time: </label>
-                <input type="time" name="due-time" id="input-due-time">
-            </div>    
+            <label for="due-time">Due Time: </label>
+            <input type="time" name="due-time" id="input-due-time" />
+          </div>
 
-            <button id="submit-button" type="submit" name>Add Task</button>
+          <button id="submit-button" type="submit" name>Add Task</button>
         </div>
 
         <div id="task-description-container">
-            <label for="taskDescription">Task Description: </label>
-            <input type="text" id="input-field-task-description" name="taskDescription">
+          <label for="taskDescription">Task Description: </label>
+          <input
+            type="text"
+            id="input-field-task-description"
+            name="taskDescription"
+          />
         </div>
-
-    </form>
-
-</div>
-
-</body>
+      </form>
+    </div>
+  </body>
 </html>

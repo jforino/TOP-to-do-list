@@ -1,56 +1,55 @@
 import { parse } from "date-fns";
 
 class Project {
-    constructor(projectName, projectToDoList=[]){
-        this.projectName = projectName; 
-        this.projectToDoList = projectToDoList;
-    }
-        
-    addToDoItemToProject(toDoItem){
-        this.projectToDoList.push(toDoItem); 
-    }
+  constructor(projectName, projectToDoList = []) {
+    this.projectName = projectName;
+    this.projectToDoList = projectToDoList;
+  }
 
-    removeToDoItemFromProject(toDoItemTitle){
-        const toDoItemIndex = this.projectToDoList.findIndex(item => item.title === toDoItemTitle);
-        this.projectToDoList.splice(toDoItemIndex, 1); 
-    }
+  addToDoItemToProject(toDoItem) {
+    this.projectToDoList.push(toDoItem);
+  }
 
-    listTasks(){
-        return this.projectToDoList; 
-    }
-    
-    uploadProjectListToLocalStorage() {
+  removeToDoItemFromProject(toDoItemTitle) {
+    const toDoItemIndex = this.projectToDoList.findIndex(
+      (item) => item.title === toDoItemTitle,
+    );
+    this.projectToDoList.splice(toDoItemIndex, 1);
+  }
 
-        const existingProjects = JSON.parse(localStorage.getItem('projects') || '[]'); 
+  listTasks() {
+    return this.projectToDoList;
+  }
 
-        const JSONProjectList = {
-            projectName : this.projectName,
-            tasks : this.projectToDoList
-        };
+  uploadProjectListToLocalStorage() {
+    const existingProjects = JSON.parse(
+      localStorage.getItem("projects") || "[]",
+    );
 
-        existingProjects.push(JSONProjectList); 
+    const JSONProjectList = {
+      projectName: this.projectName,
+      tasks: this.projectToDoList,
+    };
 
-        localStorage.setItem('projects', JSON.stringify(existingProjects));
-    }
+    existingProjects.push(JSONProjectList);
 
-    updateProjectTasks(currentProject){
-        // create func that updates the projectToDoList array when a user submits a new task 
-        
-        const projectListJSON = localStorage.getItem('projects');
-        const parsedJSON = JSON.parse(projectListJSON); 
+    localStorage.setItem("projects", JSON.stringify(existingProjects));
+  }
 
-        
-        console.log(`project to do list log-->`)
-        console.log(parsedJSON);
+  updateProjectTasks(currentProject) {
+    // create func that updates the projectToDoList array when a user submits a new task
 
-        const updatedProjectList = JSON.stringify(currentProject.projectToDoList);
-        console.log(currentProject.projectToDoList);
+    const projectListJSON = localStorage.getItem("projects");
+    const parsedJSON = JSON.parse(projectListJSON);
 
-        localStorage.setItem('projects',  updatedProjectList); 
+    console.log(`project to do list log-->`);
+    console.log(parsedJSON);
 
-    }
+    const updatedProjectList = JSON.stringify(currentProject.projectToDoList);
+    console.log(currentProject.projectToDoList);
 
+    localStorage.setItem("projects", updatedProjectList);
+  }
 }
 
-
-export default Project; 
+export default Project;

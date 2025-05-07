@@ -1,32 +1,37 @@
 class toDoItem {
+  constructor(
+    taskTitle,
+    description,
+    dueDate,
+    priority = 0,
+    notes = "",
+    completed = false,
+  ) {
+    this.taskTitle = taskTitle;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.priority = priority;
+    this.notes = notes;
+    this.completed = completed;
+  }
 
-    constructor(taskTitle, description, dueDate, priority=0, notes='', completed=false){
-        this.taskTitle = taskTitle; 
-        this.description = description; 
-        this.dueDate = dueDate;
-        this.priority = priority; 
-        this.notes = notes; 
-        this.completed = completed; 
-    }
+  completeToDoItem(checkbox) {
+    checkbox.classList.add("to-do-list-li-checked");
 
-    completeToDoItem(checkbox){
-        checkbox.classList.add('to-do-list-li-checked')
+    this.completed = true;
+  }
 
-        this.completed = true; 
-    }
+  updateToDoItemDescription(newDescription) {
+    this.description = newDescription;
+  }
 
-    updateToDoItemDescription(newDescription){
-        this.description = newDescription; 
-    }
+  setPriorityToDoItem(newPriority) {
+    this.priority = newPriority;
+  }
 
-    setPriorityToDoItem(newPriority){
-        this.priority = newPriority;
-    }
-
-    changeToDoItemDueDate(newDueDate){
-        this.dueDate = newDueDate; 
-    }
-
+  changeToDoItemDueDate(newDueDate) {
+    this.dueDate = newDueDate;
+  }
 }
 
-export default toDoItem; 
+export default toDoItem;
